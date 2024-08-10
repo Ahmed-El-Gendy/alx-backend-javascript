@@ -16,8 +16,8 @@ export default class HolbertonCourse {
   }
 
   set code(code) {
-    if (typeof code !== 'number') {
-      throw new TypeError('Code must be a number');
+    if (typeof code !== 'string') {
+      throw new TypeError('Code must be a String');
     }
     this._code = code;
   }
