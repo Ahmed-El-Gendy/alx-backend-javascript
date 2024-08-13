@@ -1,12 +1,12 @@
 export default function cleanSet(s, str) {
-  if (!str || !s || !(s instanceof Set) || !(typeof str === 'string')) {
+  if (!(s instanceof Set) || typeof str !== 'string') {
     return '';
   }
   const ch = [];
   for (const c of s.values()) {
-    if (c.startsWith(str) && typeof c === 'string') {
+    if (typeof c === 'string' && c.startsWith(str)) {
       const val = c.substring(str.length);
-      if (val !== c && val) {
+      if (val) {
         ch.push(val);
       }
     }
