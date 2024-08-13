@@ -5,8 +5,9 @@ export default function cleanSet(s, str) {
   const ch = [];
   for (const c of s.values()) {
     if (c.startsWith(str) && typeof c === 'string') {
-      if (c.substring(str.length) !== c && c.substring(str.length)) {
-        ch.push(c.substring(str.length));
+      const val = c.substring(str.length);
+      if (val !== c && val) {
+        ch.push(val);
       }
     }
   }
